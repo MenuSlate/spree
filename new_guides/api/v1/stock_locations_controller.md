@@ -11,8 +11,8 @@ GET /api/stock_locations?page=2
 ```
 
 ### Parameters
-* page: The page number of stock location to display.
-* per_page: The number of stock locations to return per page
+* `page`: The page number of stock location to display.
+* `per_page`: The number of stock locations to return per page
 
 ##### Response
 ```

@@ -15,8 +15,8 @@ GET /api/products?page=2
 * show_deleted (**boolean**)
     * `true` to show deleted products
     * `false` to hide them. Default but only available to users with an admin role
-* page: The page number of products to display
-* per_page: The number of products to return per page
+* `page`: The page number of products to display
+* `per_page`: The number of products to return per page
 
 ##### Response
 ```

@@ -11,8 +11,8 @@ GET /api/zones?page=2
 ```
 
 ### Parameters
-* page: The page number of zone to display.
-* per_page: The number of zones to return per page
+* `page`: The page number of zone to display.
+* `per_page`: The number of zones to return per page
 
 ##### Response
 ```

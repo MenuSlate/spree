@@ -12,8 +12,8 @@ GET /api/orders/R1234567/return_authorizations?page=2
 ```
 
 ### Parameters
-* page: The page number of return authorization to display.
-* per_page: The number of return authorizations to return per page
+* `page`: The page number of return authorization to display.
+* `per_page`: The number of return authorizations to return per page
 
 ##### Response
 ```

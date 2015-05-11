@@ -1,7 +1,6 @@
 # States API
 
 ## Index
-
 * To get a list of states:
 ```
 GET /api/states
@@ -31,7 +30,6 @@ end %>
 ```
 
 ## Show
-
 To find out about a single state:
 ```
 GET /api/states/1

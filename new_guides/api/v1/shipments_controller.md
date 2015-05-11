@@ -11,8 +11,8 @@ GET /api/shipments/mine?page=2
 ```
 
 ### Parameters
-* page: The page number of shipments to display.
-* per_page: The number of shipments to return per page.
+* `page`: The page number of shipments to display.
+* `per_page`: The number of shipments to return per page.
 
 ##### Response
 ```

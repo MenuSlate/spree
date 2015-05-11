@@ -9,8 +9,8 @@ GET /api/stock_locations/1/stock_movements
 ```
 
 ### Parameters
-* page: The page number of stock movements to display.
-* per_page: The number of stock movements to return per page
+* `page`: The page number of stock movements to display.
+* `per_page`: The number of stock movements to return per page
 
 ##### Response
 ```

@@ -9,8 +9,8 @@ GET /api/stock_locations/1/stock_items
 ```
 
 ### Parameters
-* page: The page number of stock items to display.
-* per_page: The number of stock items to return per page
+* `page`: The page number of stock items to display.
+* `per_page`: The number of stock items to return per page
 
 ##### Response
 ```
@@ -44,7 +44,6 @@ end %>
 ```
 
 ### Sorting results
-
 Results can be returned in a specific order by specifying which field to sort by
 ```
 GET /api/stock_locations/1/stock_items?q[s]=variant_id%20asc

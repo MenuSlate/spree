@@ -1,15 +1,14 @@
 # Taxonomies API
 
 ## Index
-
 Get a list of all taxonomies, including root nodes and immediate children for the root node:
 ```
 GET /api/taxonomies
 ```
 
 ### Parameters
-* page: The page number of taxonomy to display.
-* per_page: The number of taxonomies to return per page
+* `page`: The page number of taxonomy to display.
+* `per_page`: The number of taxonomies to return per page
 
 ##### Response
 ```

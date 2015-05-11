@@ -11,8 +11,8 @@ GET /api/orders/R1234567/payments?page=2
 ```
 
 ### Parameters
-* page: The page number of payment to display.
-* per_page: The number of payments to return per page
+* `page`: The page number of payment to display.
+* `per_page`: The number of payments to return per page
 
 ##### Response
 ```

@@ -14,8 +14,8 @@ GET /api/products/1/product_properties?page=2
 ```
 
 ### Parameters
-* page: The page number of product property to display.
-* per_page: The number of product properties to return per page
+* `page`: The page number of product property to display.
+* `per_page`: The number of product properties to return per page
 
 ##### Response
 ```

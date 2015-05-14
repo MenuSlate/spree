@@ -22,7 +22,6 @@ config/mongrel_cluster.yml
 db/*.sql
 db/*.sqlite3*
 db/schema.rb
-doc/**/*
 Gemfile.lock
 */Gemfile.lock
 lib/products_index_profiler.rb

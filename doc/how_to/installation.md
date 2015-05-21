@@ -1,11 +1,9 @@
 # Installation
-## Alternatives
-### Building a Sandbox Application
+## New Sandbox Application
 Spree includes a helpful Rake task for setting up a sample application:
 * Clone the Git repo
 ```shell
-git clone git://github.com/spree/spree.git
-cd spree
+git clone git://github.com/spree/spree.git && cd spree
 ```
 * Install the gem dependencies
 ```shell
@@ -20,9 +18,11 @@ bundle exec rake sandbox
 cd sandbox && rails server
 ```
 
-This creates a barebones rails application configured with the Spree gem. It runs the migrations  for you and sets up the sample data. The resulting `sandbox` folder is already ignored by `.gitignore` and it is deleted and rebuilt from scratch each time the Rake task runs.
+This creates a barebones application configured with Spree gem. It runs the DB migrations  and sets
+up the sample data. Resulting `sandbox` folder is ignored by `.gitignore` and is  deleted and
+rebuilt from scratch each time the Rake task runs.
 
-### Use as a Gem with Existing Application
+## Existing Application
 * To use a stable branch of Spree, add this line to your Gemfile
 ```
 gem 'spree', github: 'spree/spree', branch: '3-0-stable'
@@ -59,14 +59,17 @@ bundle exec rake spree_sample:load
 
 Username `spree@example.com` and password `spree123`
 
-> If you elected not to use the `--auto-accept` option when you added Spree to your Rails app, and  did not install the seed data, the admin user will not yet exist in your database. You can run   a simple rake task to create a new admin user.
+> If you elected not to use the `--auto-accept` option when you added Spree to your Rails app, and 
+did not install the seed data, the admin user will not yet exist in your database. You can run a 
+simple rake task to create a new admin user.
 
 > ```bash
 > rake spree_auth:admin:create
 > ```
 
-## Performance
-Rails in development mode continuously reloads objects on each request. The asset pipeline made  things worse. To speed up performance in development mode when NOT working on front end issues:
+## Performance Tips
+Rails in development mode continuously reloads objects on each request. The asset pipeline made 
+things worse. To speed up performance in development mode when NOT working on front end issues:
 * In your `config/development.rb` add:
 ```
 config.assets.debug = false
@@ -80,9 +83,17 @@ RAILS_ENV=development bundle exec rake assets:precompile
 RAILS_ENV=development bundle exec rake assets:clean
 ```
 
-## Upgrade
-Before updating, you will want to ensure the installed spree gem is up-to-date by modifying `Gemfile` to match the new spree version and run `bundle update`.
-
-Thanks to Rails 3.1 Mountable Engine, the update process is "non-destructive" than in previous versions of Spree. The core files are encapsulated separately from sandbox, thus upgrading to newer files will not override nor replace sandbox's customized files.
-
-This makes it easier to see when and how some file has changed � which is often useful if you need to update a customized version.
+## Upgrades
+The core files are encapsulated separately from sandbox so upgrading to newer files will not 
+override nor replace sandbox's customized files. To upgrade:
+* Ensure the installed spree gem is up-to-date by modifying `Gemfile` to match the new 
+spree version
+* Run `bundle update spree`
+* Copy any DB migrations from Spree (and any other engine) and run them:
+```
+    rake railties:install:migrations
+    rake db:migrate
+```
+* If you have extensions, you will need to manually verify that each works once an upgrade is 
+complete. Typically, compatible extensions will in a branch matching the upgrade version
+* Manually test your store

@@ -10,7 +10,7 @@
   - [Overriding template](#overriding-template)
   - [Custom template](#custom-template)
 
-> For a specific API, see its related guide or [controller documentation](/../Controllers/README.md)
+> For a specific API, see its related guide or [controller documentation](../controllers/README.md)
 
 Spree currently supports RESTful access to the resources listed in the sidebar on the right;
 

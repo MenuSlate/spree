@@ -5,8 +5,8 @@
   - [Not Found](#not-found)
   - [Authorization Failure](#authorization-failure)
   - [Invalid API Key](#invalid-api-key)
-- [Rules](#rules)
-- [Customizing Responses](#customizing-responses)
+- [API Endpoint Rules](#api-endpoint-rules)
+- [Customization: API Response](#customization-api-response)
   - [Overriding template](#overriding-template)
   - [Custom template](#custom-template)
 
@@ -46,22 +46,21 @@ You may encounter the follow error messages when using the API.
 ### Invalid API Key
 `<%= headers 401 %> <%= json(:error => "Invalid API key ([key]) specified.") %>`
 
-## Rules
-The following are some simple rules that all Spree API endpoints comply with.
-1. All successful requests for the API will return a status of 200.
-2. Successful create and update requests will result in a status of 201 and 200 respectively.
-3. Both create and update requests will return Spree\'s representation of the data upon success.
-4. If a create or update request fails, a status code of 422 will be returned, with a hash
-5. containing an \"error\" key, and an \"errors\" key. The errors value will contain all ActiveRecord
-6. validation errors encountered when saving this record.
-7. Delete requests will return status of 200, and no content.
-8. Requests that list collections, such as /api/products will return a limited result set back.
+## API Endpoint Rules
+1. All successful requests for the API will return a status of 200
+2. Successful create and update requests will result in a status of 201 and 200 respectively
+3. Both create and update requests will return Spree\'s representation of the data upon success
+4. If create or update request fails, a status code of 422 will be returned, with a hash
+containing an \"error\" key, and an \"errors\" key. The errors value will contain all ActiveRecord
+validation errors encountered when saving this record
+7. Delete requests will return status of 200, and no content
+8. Requests that list collections, such as /api/products will return a limited result set back
 9. Requests that list collections can be paginated through by passing a page parameter that is a
-10. number greater than 0.
-11. If a resource can not be found, the API will return a status of 404.
-12. Unauthorized requests will be met with a 401 response.
+number greater than 0
+11. If a resource can not be found, the API will return a status of 404
+12. Unauthorized requests will be met with a 401 response
 
-## Customizing Responses
+## Customization: API Response
 If you wish to customize the responses from the API, you can do this in one of two ways: overriding the template, or providing a custom template.
 
 ### Overriding template

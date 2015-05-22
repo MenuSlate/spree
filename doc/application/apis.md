@@ -80,3 +80,6 @@ If you were to take this route, the new template file's path would be `app/views
 To use this new template for your API response, simply pass the `template` parameter along with the request: `http://example.com/api/products/1?template=small_show`. The API component of Spree will then detect this parameter, find the template, and then use this to render the response.
 
 > Due to [the way this implemented](https://github.com/spree/spree/blob/v2.3  .1/api/lib/spree/api/responders/rabl_template.rb#L5-L18) you need to ensure the action rendering in your custom template explicitly calls `respond_with`
+
+## Spree API Examples
+Examples of how to interact with Spree's API are [found here](https://github.com/spree-contrib/spree_api_examples)

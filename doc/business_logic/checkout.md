@@ -229,3 +229,6 @@ en:
 
 > Use of the breadcrumb is entirely optional and doesn't need to correspond to checkout states
 nor does every state need to be represented. Feel free to customize this behavior as well.
+
+### Additional Customization Examples
+A blog beautifully explains how to acheive [One Page Checkout with Spree](http://nebulab.it/blog/one-page-checkout-with-spree). Code is [public](https://github.com/nebulab/spree-one-page-checkout).

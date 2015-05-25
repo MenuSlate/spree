@@ -81,5 +81,10 @@ To use this new template for your API response, simply pass the `template` param
 
 > Due to [the way this implemented](https://github.com/spree/spree/blob/v2.3  .1/api/lib/spree/api/responders/rabl_template.rb#L5-L18) you need to ensure the action rendering in your custom template explicitly calls `respond_with`
 
-## Spree API Examples
+## Additional Resources
+### Spree API Client
+A rubygem for interacting with the Spree API [found here](https://github.com/andrew/spree-api-client)
+
+### Spree API Examples
 Examples of how to interact with Spree's API are [found here](https://github.com/spree-contrib/spree_api_examples)
+

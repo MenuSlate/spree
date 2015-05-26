@@ -89,18 +89,5 @@ creation details
 Store received a shipment of picture frames with a variety of brands, sizes, colors and materials
 but are similar in everything else. This is a prime use case for prototypes.
 
-## Taxons and Taxonomies
-* `Taxonomy`: the category tree - a hierarchical list of individual Taxons
-* Each `Taxonomy` relates to one `Taxon` that is its root node
-* `Taxon`: a single child node which exists at a given point within a `Taxonomy`
-* Each `Taxon` can contain many or no child taxons
-* Admins can define many Taxonomies and link a product to multiple Taxons from each Taxonomy
-* By default, both Taxons and Taxonomies are ordered by their `position` attribute
-* Taxons use [Nested set model](http://en.wikipedia.org/wiki/Nested_set_model) for their hierarchy.
-The `lft` and `rgt` columns in the `spree_taxons` table represent the locations within the hierarchy
-of the item. This logic is handled by awesome_nested_set gem
-* Taxons link to products through a `Classification` model that when a product is deleted, all links
-from it to its taxons are deleted automatically. Similarly, when a taxon is deleted all links to
-products are deleted automatically
-* Linking to a taxon in a controller or a template should be done using `nested_taxons_path` helper
-which will use the taxon's permalink to generate a URL such as `/t/categories/brand`
+## Taxonomies & Taxons
+See [Taxonomy](../models/Taxonomy.md)

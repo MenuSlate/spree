@@ -1,4 +1,15 @@
 ## Taxon (Model)
+* Single child node that exists at a given point within a `Taxonomy`
+* Each can contain many or no child taxosn
+* Ordered by its `position` attribute
+* Uses [Nested set model](http://en.wikipedia.org/wiki/Nested_set_model) for hierarchy. `lft` and `rgt` columns in `spree_taxons` table represent locations within the hierarchy of the item (all handled by `awesome_nested_set` gem)
+* Links to products through a `Classification` model that:
+  * When a product is deleted all links from it to its taxons are deleted automatically
+  * When a taxon is deleted all links to products are deleted automatically
+* Admins can link a product to multiple Taxons within a `Taxonomy`
+* Linking to a taxon in a controller or a template should be done using `nested_taxons_path` helper which will use the taxon's permalink to generate a URL such as `/t/categories/brand`
+
+> See [Taxonomy](../models/Taxonomy.md)
 
 #### Attributes
 * `parent_id`
